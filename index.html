@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="assets/favicon.svg" type="image/x-icon" />
+
+    <!-- Material icons  -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <title>Monances</title>
+  </head>
+  <body>
+    <div class="container">
+      <aside>
+        <div class="top">
+          <div class="logo">
+            <img src="assets/logo.svg" alt="Logo Monances" />
+            <h3>Monance<span>$</span></h3>
+          </div>
+          <div class="close" id="close-btn">
+            <span class="material-icons">close</span>
+          </div>
+        </div>
+        <div class="sidebar">
+          <a href="#">
+            <span class="material-icons">home</span>
+            <p>Home</p>
+          </a>
+          <a href="#" class="active">
+            <span class="material-icons">grid_view</span>
+            <p>Dashboard</p>
+          </a>
+          <a href="#">
+            <span class="material-icons">insights</span>
+            <p>Analytics</p>
+          </a>
+          <a href="#">
+            <span class="material-icons">info</span>
+            <p>About</p>
+          </a>
+          <a href="#">
+            <span class="material-icons">contact_page</span>
+            <p>Contact</p>
+          </a>
+        </div>
+      </aside>
+      <!-- END OF SIDEBAR -------------------- -->
+      <main>
+        <h2 id="date-display">November, 8</h2>
+
+        <section id="balance">
+          <h2 class="sr-only">Balanço</h2>
+
+          <div class="card">
+            <h3>
+              <span>Entradas</span>
+              <img src="assets/incomes.svg" alt="Imagem de entradas" />
+            </h3>
+            <p id="incomeDisplay">R$ 0,00</p>
+          </div>
+
+          <div class="card">
+            <h3>
+              <span>Saídas</span>
+              <img src="assets/expenses.svg" alt="Imagem de saídas" />
+            </h3>
+            <p id="expenseDisplay">R$ 0,00</p>
+          </div>
+
+          <div class="card total">
+            <h3>
+              <span>Total</span>
+              <img src="assets/total.svg" alt="Imagem de total" />
+            </h3>
+            <p id="totalDisplay">R$ 0,00</p>
+          </div>
+        </section>
+
+        <section id="transaction">
+          <h2 class="sr-only">Transações</h2>
+
+          <div class="last-transactions">
+            <div class="table-top">
+              <h2>Last transactions</h2>
+            
+              <button
+                href="#"
+                id=".newTransaction"
+                class="button new"
+                onclick="Modal.open()">
+                + New Transaction
+              </button>
+            </div>
+            
+
+            <div class="table-container">
+              <table id="data-table">
+                <thead>
+                  <tr>
+                    <th>Descrição</th>
+                    <th>Valor</th>
+                    <th>Data</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+                </tbody>
+              </table>         
+            </div>
+          </div>
+        </section>
+      </main>
+
+
+      <div class="right">
+        <div class="theme-toggler">
+            <span class="material-icons" id="toggle-light">light_mode</span>
+            <span class="material-icons" id="toggle-dark">dark_mode</span>
+        </div>
+        
+        <div class="analytics">
+          <h3>Balance  Chart</h3>
+          <div >
+            <canvas id="myChart"></canvas>
+          </div>   
+
+           
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal">
+        <div id="form">
+          <h2>New Transaction</h2>
+          <form action="" onsubmit="Form.submit(event)">
+            <div class="input-group">
+              <label class="sr-only" for="description">Descrição</label>
+              <input type="text" id="description" name="description" placeholder="Descrição">
+            </div>
+
+            <div class="input-group">
+              <label class="sr-only" for="amount">Valor</label>
+              <input type="number" step="0.01" id="amount" name="amount" placeholder="0,00">
+              <small class="help">Use the minus sign (-) for expenses and comma ( , ) for decimals</small>
+            </div>
+
+            <div class="input-group">
+              <label class="sr-only" for="date">Data</label>
+              <input type="date" id="date" name="date">
+            </div>
+
+            <div class="actions">
+              <a href="#" id="cancelTransaction" class="button cancel" onclick="Modal.close()">Cancelar</a>
+              <button class="save">Confirm</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+
+    <script src="index.js"></script>
+    <script src="theme.js"></script>
+  </body>
+</html>

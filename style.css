@@ -1,0 +1,469 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+:root{
+  --color-primary: #7380EC;
+  --color-theme-toggler: #7380EC;
+  --color-red: #ff7782;
+  --color-green: #28D39A;
+  --color-yellow: #ffbb55;
+  --color-white: #fff;
+  --color-info-dark: #7d8da1;
+  --color-info-light: #dce1eb;
+  --color-dark: #363949;
+  --color-dark-chart: #363949;
+  --color-light: rgba(132,139,200, 0.18);
+  --color-primary-variante: #111e88;
+  --color-dark-variant: #677483;
+  --color-background:   #f6f6f9;
+
+  --card-border-radius: 2rem;
+  --card-padding: 1.8rem;
+  --padding-1: 1.2rem;
+
+  --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+.dark-theme-variables {
+  --color-theme-toggler: #202528;
+  --color-background: #181a1e;
+  --color-white: #202528;
+  --color-dark: #edeffd;
+  --color-dark-chart: #c4c4c4;
+  --color-dark-variant: #a3bdcc;
+  --color-light: rgba(0, 0, 0, 0.4);
+  --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 14px;
+}
+
+
+.container{
+  display: grid;
+  gap: 1.8rem;
+  grid-template-columns: 14rem auto 23rem;
+  margin: 0 auto;
+
+  width: 96%;
+}
+
+a, button, input, select, textarea{
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+  background: var(--color-background);
+}
+
+/*screen reader only*/
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.close {
+  display: none;
+}
+
+button{
+  padding: 1rem 4rem;
+  border: dashed 2px var(--color-primary);
+  border-radius: var(--card-border-radius);
+  background-color: transparent;
+  color: var(--color-primary);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 400ms ease;
+}
+
+button:hover{
+  background-color:  var(--color-primary);
+  color: var(--color-white);
+}
+
+/*=================== SIDEBAR ===================*/
+
+aside{
+  height: 100vh;
+}
+
+aside .top{
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+  margin-top: 1.4rem;
+}
+
+aside .logo{
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+aside .logo h3{
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--color-dark);
+}
+
+aside .logo span{
+  color: var(--color-red);
+  font-size: 1.6rem;
+}
+
+aside .sidebar{
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  
+  height: 86vh;
+  
+  position: relative;
+  top: 3rem; 
+}
+
+aside .sidebar a span{
+  font-size: 1.6rem;
+  color: var(--color-info-dark);
+}
+
+aside .sidebar a {
+  text-decoration: none;
+  color: var(--color-info-dark);
+  transition: all 300ms ease;
+  
+  margin-left: 2rem;
+  height: 3.7rem;
+  
+  display: flex;
+  align-items: center;
+  position: relative;
+  gap: 1rem;
+}
+
+aside .sidebar a.active{
+  background: var(--color-light);
+  color: var(--color-primary);
+  margin-left: 0;
+}
+
+aside .sidebar a.active:before{
+  content: '';
+  width: 6px;
+  height: 100%;
+  background: var(--color-primary);
+}
+
+
+aside .sidebar a.active span{
+  color: var(--color-primary);
+  margin-left: calc(1rem - 3px);
+}
+
+aside .sidebar a > span{
+  transition: all 300ms ease;
+}
+
+aside .sidebar a:hover{
+  color: var(--color-primary);
+} 
+
+aside .sidebar a:hover span{
+  color: var(--color-primary);
+  margin-left: 1rem;
+} 
+
+/*=================== MAIN ===================*/
+
+#date-display{
+  margin-top: 2rem;
+  font-weight: 600;
+  color: var(--color-dark);
+}
+
+#balance{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr; /*or repeat(1fr, 3)*/
+  grid-auto-flow: column;
+  gap: 2rem;
+}
+
+.card{
+  background: var(--color-white);
+  border-radius: var(--card-border-radius);
+  padding: var(--card-padding);
+  min-width: 200px;
+  box-shadow: var(--box-shadow);
+  transition: all 300ms ease;
+}
+.card:hover{
+  box-shadow: none;
+}
+
+.card.total{
+  background-color: var(--color-primary) ;
+}
+
+.card.total h3, .card.total > p{
+  color: var(--color-white);
+}
+
+.card h3{
+  font-weight: normal; 
+  font-size: 1rem;
+  color: var(--color-dark);
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card h3 > img{
+  margin-left: 1rem;
+}
+
+.card > p{
+  font-size: 2rem;
+  line-height: 3rem;
+  margin-top: 1rem;
+  display: block;
+  
+  color: var(--color-dark);
+}
+
+/*=================== SECTION TRANSACTIONS ===================*/
+
+.table-top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4rem;
+  margin-bottom: 1.5rem;
+}
+
+main .last-transactions > h2{
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 4rem;
+  color: var(--color-dark);
+}
+
+main .last-transactions h2{
+  margin-bottom: 0.8rem;
+  color: var(--color-dark)
+}
+main .last-transactions table{
+  background-color: var(--color-white);
+  width: 100%;
+  border-radius: var(--card-border-radius);
+  padding: var(--card-padding);
+  text-align: left;
+  box-shadow: var(--box-shadow);
+  transition: all 300ms ease;
+}
+
+main .table-container:hover table{
+  box-shadow: none;
+}
+
+table thead th{
+  text-align: left;
+  color: var(--color-dark);
+}
+
+table tbody td{
+  height: 2.8rem;
+  border-bottom: 1px solid var(--color-light);
+  color: var(--color-dark-variant)
+}
+
+table tbody tr:last-child td{
+  border: none;
+}
+
+table tbody td > span{
+  cursor: pointer;
+}
+
+td.expense{
+  color: var(--color-red);
+}
+
+td.income{
+  color: var(--color-green);
+}
+
+.remove-transaction{
+  cursor: pointer;
+  
+}
+
+/*==================== RIGHT ====================*/
+
+.theme-toggler{
+  background: var(--color-light);
+  border-radius: 0.50rem;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 1.6rem;
+  width: 4.2rem;
+  margin-top: 2rem;
+}
+
+.theme-toggler > span{
+  font-size: 1.2rem;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-dark);
+  cursor: pointer;
+
+  transition: all 100ms ease-in;
+}
+
+.theme-toggler span.active{
+  background: var(--color-primary);
+  color: white;
+  border-radius: 0.50rem;
+}
+
+.analytics{
+  background: var(--color-white);
+  padding: 2rem;
+  border-radius: 2rem;
+  margin-top: 2.60rem;
+}
+
+.analytics h3{
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  color: var(--color-dark)
+}
+
+.legendBox{
+  width: 100px;
+}
+
+/*============== Modal ==============*/
+.modal-overlay{
+  width: 100%;
+  height: 100%;
+  background-color:rgba(0,0,0,.7);
+
+  position: fixed;
+  top: 0;
+  bottom: 0;
+
+  /* modal box - align center */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /*hidden modal*/
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+}
+.modal-overlay.active{
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal{
+  background: var(--color-background);
+  padding: 2.4rem;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 2rem;
+}
+
+.modal input{
+  width: 100%;
+  border-radius: 0.25rem;
+  border: none;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: var(--color-white);
+  color: var(--color-dark);
+}
+
+.modal input:last-child{
+  margin-top: 2rem;
+}
+
+.modal h2{
+  margin-bottom: 2rem;
+}
+
+.modal small{
+  color: var(--color-info-dark)
+}
+
+.modal button.save{
+  border: none;
+  background-color: var(--color-green);
+  color: var(--color-white);
+  width: 45%;
+  transition: all 300ms ease;
+}
+
+.modal button.save:hover{
+  filter: brightness(0.9);
+}
+
+.modal a#cancelTransaction{
+  padding: 1rem 4rem;
+  width: 45%;
+  background-color: var(--color-red);
+  color: var(--color-white);
+  border-radius: var(--card-border-radius);
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 300ms ease;
+}
+
+.modal a#cancelTransaction:hover{
+  filter: brightness(0.9);
+}
+
+.input-group{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.actions{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 1rem;
+}
+
+canvas{ 
+  width:270px !important;
+  height:300px !important;
+}
+
+/*Responsive ================*/
