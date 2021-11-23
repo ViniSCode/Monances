@@ -360,8 +360,22 @@ td.income{
   color: var(--color-dark)
 }
 
+.analytics{
+ box-shadow: var(--box-shadow);
+ transition: all 300ms;
+}
+
+.analytics:hover{
+ box-shadow: none;
+}
+
 .legendBox{
   width: 100px;
+}
+
+canvas{ 
+  width:270px !important;
+  height:300px !important;
 }
 
 /*============== Modal ==============*/
@@ -461,9 +475,5 @@ td.income{
   margin-top: 1rem;
 }
 
-canvas{ 
-  width:270px !important;
-  height:300px !important;
-}
 
 /*Responsive ================*/

@@ -1,4 +1,3 @@
-
 const Modal = {
   open(){
     document.getElementById('modalOverlay').classList.add('active');
@@ -22,7 +21,6 @@ const Transaction = {
   //criando um atalho do objeto transactions+
   all:Storage.get(),
 
-
   add(transaction){
     Transaction.all.push(transaction)
     //após add a transação
@@ -30,8 +28,7 @@ const Transaction = {
   },
   
   remove(index){
-    //em qual index do array vai remover e deletar 1 item
-    Transaction.all.splice(index, 1)
+    Transaction.all.reverse().splice(index, 1)
     App.reload()
   },
 
@@ -258,7 +255,7 @@ const AddChart = {
     if(Transaction.incomes().toString() === '0' &&  Transaction.expenses().toString() === '0'){
 
       var style = getComputedStyle(document.body)
-      console.log(style)
+
       const darkThemeTextColor = style.getPropertyValue('--color-info-dark')
 
       options = {
@@ -283,7 +280,6 @@ const AddChart = {
     else{
 
       var style = getComputedStyle(document.body)
-      console.log(style)
       const darkThemeTextColor = style.getPropertyValue('--color-info-dark')
 
       options = {
