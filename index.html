@@ -24,7 +24,7 @@
             <h3>Monance<span>$</span></h3>
           </div>
           <div class="close" id="close-btn">
-            <span class="material-icons">close</span>
+            <span class="material-icons" onclick="MobileMenu.close()" >close</span>
           </div>
         </div>
         <div class="sidebar">
@@ -52,7 +52,13 @@
       </aside>
       <!-- END OF SIDEBAR -------------------- -->
       <main>
-        <h2 id="date-display">November, 8</h2>
+        <div class="topMenu">
+          <div class="menu-mobile">
+            <span class="material-icons" id="mobile-menu" onclick="MobileMenu.open()">menu</span>
+          </div>
+          <h2 id="date-display">November, 8</h2>
+        </div>
+
         <section id="balance">
           <h2 class="sr-only">Balanço</h2>
 
@@ -120,10 +126,10 @@
 
       <div class="right">
         <div class="theme-toggler">
-            <span class="material-icons" id="toggle-light">light_mode</span>
+            <span class="material-icons active" id="toggle-light">light_mode</span>
             <span class="material-icons" id="toggle-dark">dark_mode</span>
         </div>
-        
+  
         <div class="analytics">
           <h3>Balance  Chart</h3>
           <div >

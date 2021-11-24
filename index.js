@@ -1,4 +1,13 @@
-
+const MobileMenu = {
+  open(){
+    document.querySelector('aside').classList.add('active');
+    document.querySelector('.menu-mobile span').style.display = 'none';
+  },
+  close(){
+    document.querySelector('aside').classList.remove('active')
+    document.querySelector('.menu-mobile span').style.display = 'block';
+  },
+}
 
 const Modal = {
   open(){
