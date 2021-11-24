@@ -18,6 +18,13 @@ toggleDark.addEventListener('click', () => {
   toggleLight.classList.remove('active');
 })
 
+
+if(JSON.parse(localStorage.getItem("theme") == null)){
+  localStorage.setItem("theme", JSON.stringify('light'))
+  toggleLight.classList.add('active')
+  toggleDark.classList.remove('active');
+}
+
 if(JSON.parse(localStorage.getItem("theme")) == 'dark'){
   document.body.classList.add('dark-theme-variables');
   toggleDark.classList.add('active');
