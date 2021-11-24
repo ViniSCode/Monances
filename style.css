@@ -748,9 +748,6 @@ canvas{
   .table-container{
     padding: 0rem;
     background-color: var(--color-background);
-  }
-
-  table.data-table{
-    margin-bottom: 4rem;
+    margin-bottom: 10rem;
   }
 }
