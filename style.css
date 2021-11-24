@@ -750,4 +750,7 @@ canvas{
     background-color: var(--color-background);
   }
 
+  table.data-table{
+    margin-bottom: 4rem;
+  }
 }
