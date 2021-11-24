@@ -222,7 +222,7 @@ aside .sidebar a:hover span{
 }
 
 .card.total h3, .card.total > p{
-  color: var(--color-white);
+  color: white;
 }
 
 .card h3{
@@ -374,11 +374,24 @@ td.income{
 }
 
 canvas{ 
-  width:270px !important;
+  width:280px !important;
   height:300px !important;
 }
 
 /*============== Modal ==============*/
+.modalTop{
+  display: flex;
+  align-items:center;
+  justify-content: space-between;
+
+  margin-bottom: 2rem;
+}
+
+#close-modal-btn{
+  color: var(--color-dark);
+  cursor: pointer;
+}
+
 .modal-overlay{
   width: 100%;
   height: 100%;
@@ -426,7 +439,7 @@ canvas{
 }
 
 .modal h2{
-  margin-bottom: 2rem;
+  color: var(--color-dark);
 }
 
 .modal small{
@@ -436,8 +449,8 @@ canvas{
 .modal button.save{
   border: none;
   background-color: var(--color-green);
-  color: var(--color-white);
-  width: 45%;
+  color: white;
+  width: 50%;
   transition: all 300ms ease;
 }
 
@@ -449,11 +462,15 @@ canvas{
   padding: 1rem 4rem;
   width: 45%;
   background-color: var(--color-red);
-  color: var(--color-white);
+  color: white;
   border-radius: var(--card-border-radius);
   text-decoration: none;
   font-weight: bold;
   transition: all 300ms ease;
+
+  display: flex;
+  align-items:center;
+  justify-content: center;
 }
 
 .modal a#cancelTransaction:hover{

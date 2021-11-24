@@ -1,10 +1,12 @@
+
+
 const Modal = {
   open(){
     document.getElementById('modalOverlay').classList.add('active');
   },
   close(){
     document.getElementById('modalOverlay').classList.remove('active')
-  }
+  },
 }
 
 const Storage = {
@@ -18,12 +20,10 @@ const Storage = {
 }
 
 const Transaction = {
-  //criando um atalho do objeto transactions+
   all:Storage.get(),
 
   add(transaction){
     Transaction.all.push(transaction)
-    //após add a transação
     App.reload()
   },
   
@@ -33,35 +33,32 @@ const Transaction = {
   },
 
   incomes(){
-    // somar as entradas
+    // total incomes
     let income = 0;
     Transaction.all.forEach(transaction => {
       if(transaction.amount > 0){
         income += transaction.amount
       }
     })
-    
     return income 
   },
   expenses(){
-    // somar as saídas
+    // total expenses
     let expense = 0;
     Transaction.all.forEach(transaction => {
       if(transaction.amount < 0){
         expense += transaction.amount
       }
     })
-    
     return expense
   },
   total(){
-    // somar as entradas menos as saídas
+    //total
     return Transaction.incomes() + Transaction.expenses()
   }
 }
 
 const DOM = {
-  //pegar o tbody
   transactionsContainer: document.querySelector('#data-table tbody'),
 
   addTransaction(transaction, index) {
@@ -85,12 +82,11 @@ const DOM = {
           <img onclick="Transaction.remove(${index})" src="./assets/x-circle.svg" class="remove-transaction" alt="Remover transação">
       </td>
       `
-
       return html
   },
 
 
-  //mostrar os valores no Balance
+  //show balance cards (incomes, expenses and total)
   updateBalance(){
     document
     .getElementById('incomeDisplay')
@@ -137,30 +133,28 @@ const Utils = {
     })
     
     return signal + value;
-  }
+  },
 }
+
 
 const Form = {
   description: document.querySelector('input#description'),
   amount: document.querySelector('input#amount'),
   date: document.querySelector('input#date'),
 
+
   getValues(){
-    //pegar os valores dos inputs acima
+    //get input (modal) values
     return {
       description: Form.description.value,
       amount: Form.amount.value,
-      date: Form.date.value
+      date: Form.date.value,
     }
   },
 
   validateField(){
-    //const description = Form.getValues().description
-    //const amount = Form.getValues().amount 
-    //pegar as variáveis acima de um jeito mais fácil
     const {description, amount, date} = Form.getValues()
-  
-    //se description, amount, date === vazio retorna um erro
+
     if(description.trim() === "" || 
       amount.trim === "" || 
       date.trim() === ""){
@@ -169,7 +163,7 @@ const Form = {
   },
 
   formatValues(){
-    let {description, amount, date} = Form.getValues()
+    let {description, amount, date, value} = Form.getValues()
 
     amount = Utils.formatAmount(amount);
     date = Utils.formatDate(date);
@@ -185,6 +179,7 @@ const Form = {
     Form.description.value = ""
     Form.amount.value = ""
     Form.date.value = ""
+    Form.value = ""
   },
 
   submit(event){
@@ -192,15 +187,14 @@ const Form = {
     event.preventDefault()
 
     try{
-      // verificar se todas as informações foram preenchidas
+      //verify fields before submit
       Form.validateField()
-      // formatar os dados para salvar
       const transaction = Form.formatValues()
       //salvar
       Transaction.add(transaction)
-      //apagar os dados do formulario
+      //clear modal fields
       Form.clearFields()
-      //fechar o modal
+      //close modal
       Modal.close()
     }
     catch(error){
@@ -231,7 +225,6 @@ const AddChart = {
             backgroundColor: ['#28D39A', '#ff7782', '#7380EC'],
             usePointStyle: true,
         }],
-        // cria-se legendas para os respectivos valores do vetor data
         labels: ['Incomes', 'Expenses']
       };  
     }
@@ -243,7 +236,6 @@ const AddChart = {
             backgroundColor: ['#bbb'],
             usePointStyle: true,
         }],
-        // cria-se legendas para os respectivos valores do vetor data
         labels: ['No Transactions']
       };  
     }
@@ -253,9 +245,7 @@ const AddChart = {
   getOptions(){
     let options;
     if(Transaction.incomes().toString() === '0' &&  Transaction.expenses().toString() === '0'){
-
       var style = getComputedStyle(document.body)
-
       const darkThemeTextColor = style.getPropertyValue('--color-info-dark')
 
       options = {
@@ -278,7 +268,6 @@ const AddChart = {
     }
 
     else{
-
       var style = getComputedStyle(document.body)
       const darkThemeTextColor = style.getPropertyValue('--color-info-dark')
 
@@ -293,7 +282,6 @@ const AddChart = {
             fontColor: darkThemeTextColor,
             usePointStyle: true,
           },
-  
           onHover: function (event, legendItem) {
             // There is only a legendItem when your mouse is positioned over one
             if (legendItem) {
@@ -311,7 +299,6 @@ const AddChart = {
   },
 
   update(){
-
     let options = this.getOptions();
     let data = this.getData();
 
@@ -320,16 +307,13 @@ const AddChart = {
       data: data,
       options: options
     });
-
   }      
 }
 
 const App = {
   init() {
       Transaction.all.reverse().forEach(DOM.addTransaction)
-      
       DOM.updateBalance()
-
       Storage.set(Transaction.all.reverse())
   },
   reload(){
@@ -339,7 +323,6 @@ const App = {
     App.init()
   }
 }
-
 App.init()
 AddChart.update();
 
@@ -388,3 +371,5 @@ Transaction.all.forEach(transaction =>{
   }
   
 })
+
+
