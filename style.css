@@ -544,6 +544,17 @@ canvas{
   display: none;
 }
 
+
+footer{
+  text-align: center;
+  margin-bottom: 4rem;
+}
+footer a {
+  color: var(--color-info-dark);
+  font-size: 1.3rem;
+  text-decoration: none;
+}
+
 /*Responsive ================*/
 
 @media (min-width: 1400px){
