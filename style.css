@@ -54,8 +54,17 @@ html{
   width: 96%;
 }
 
+
+.topMenu{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
 .menu-mobile span{
   display: none;
+  color: var(--color-dark);
 }
 
 a, button, input, select, textarea{
@@ -198,7 +207,6 @@ aside .sidebar a:hover span{
 /*=================== MAIN ===================*/
 
 #date-display{
-  margin-top: 2rem;
   font-weight: 600;
   color: var(--color-dark);
 }
@@ -332,15 +340,39 @@ td.income{
 
 /*==================== RIGHT ====================*/
 
-.theme-toggler{
+.right .top{
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.right .top button{
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
+}
+
+.top button span{
+  color: var(--color-dark);
+
+}
+
+.right .theme-toggler{
   background: var(--color-light);
-  border-radius: 0.50rem;
   display:flex;
   justify-content: space-between;
   align-items: center;
   height: 1.6rem;
   width: 4.2rem;
-  margin-top: 2rem;
+  cursor: pointer;
+  border-radius: 0.50rem;
 }
 
 .theme-toggler > span{
@@ -508,6 +540,10 @@ canvas{
 }
 
 
+.addTransactionMobileButton #newTransactionMobile{
+  display: none;
+}
+
 /*Responsive ================*/
 
 @media (min-width: 1400px){
@@ -559,32 +595,32 @@ canvas{
     grid-template-columns: 7rem auto;
   }
   
-}
-
-@media (max-width:976px){
-  html{
-    font-size: 12px;
+  .table-top{
+    margin-bottom: 1.4rem;
   }
 
-  .topMenu{
-    z-index: 0;
-    width: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  .table-top button#newTransaction{
+    padding: .70rem 1rem;
+    font-size: 0.9rem;
   }
 
-  .theme-toggler{
-    margin-top: 2.5rem;
+  main .last-transactions h2{
+    font-size: 1.1rem;
+  }
+
+  .addTransactionMobileButton #newTransactionMobile{
+    display: none;
+  }
+
+  #date-display{
+    font-size: 1.2rem;
   }
   
-  .menu-mobile span{
-    display: block;
-    cursor: pointer;
-    color: var(--color-dark);
-    font-size: 2rem;
-    margin-top: 2rem;
-    margin-left: 1.3rem;
+}
+
+@media (max-width:800px){
+  html{
+    font-size: 12px;
   }
 
   .container{
@@ -595,26 +631,22 @@ canvas{
     grid-template-columns: 1fr;
     grid-auto-flow: row;
   }
-
-  aside .sidebar{
-    display: block;
-    height: 100vh;
-  }
-
   
   aside .logo h3{
     display: block;
   }
-  
-  aside > .top .logo img{
-    width: 35px;
-    height: 35px;
-    margin-left: 1.3rem;
-  }
 
   aside{
-    display: none;
+    position: fixed;
     left: -100%;
+    background: var(--color-white);
+    width: 18rem;
+    z-index: 3;
+    box-shadow: 1rem 3rem 4rem var(--color-light);
+    height: 100vh;
+    padding-right: var(--card-padding);
+    /* use js to show the aside */
+    display: none;
   }
 
   aside.active{
@@ -623,9 +655,9 @@ canvas{
     width: 18rem;
     z-index: 101;
     box-shadow: var(--box-shadow);
-    animation: Sidebar 500ms ease-in forwards;
+    animation: Sidebar 400ms ease forwards;
   }
-
+  
   @keyframes Sidebar{
 
     to{
@@ -636,7 +668,6 @@ canvas{
   .close{
     display: block;
     color: var(--color-dark);
-    margin-right: 2rem;
     margin-top: 0.9rem;
   }
 
@@ -644,8 +675,79 @@ canvas{
     display: block;
   }
 
-  #date-display{
-    text-align: center;
+  .top{
+    display: none;
+  }
+
+  aside .sidebar{
+    background-color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 1.6rem; 
+  }
+  
+  .right .top{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    padding-top:0 0.8rem;
+    height: 4.6rem;
+    background: var(--color-white);
+    width: 100%;
+    margin: 0;
+    z-index: 2;
+    box-shadow: 0 1rem 1rem var(--color-light);
+  }
+
+  .right .top .theme-toggler{
+    width: 4.4rem;
+    position: absolute;
+    right: 2rem;
+  }
+  
+  .right .top button {
+    display: inline-block;
+    background: transparent;
+    cursor: pointer;
+    color: var(--color-danger);
+    position: absolute;
+    left: 2rem;
+  }
+
+  .right .top button span{
+    font-size: 2rem;
+  }
+
+  
+  .table-top button#newTransaction{
+    display: none;
+  }
+
+  .addTransactionMobileButton #newTransactionMobile{
+    padding: 0.5rem;
+    display: flex;
+    align-items:center;
+    background: var(--color-primary);
+    color: white;
+    position: fixed;
+    right: 8%;
+    z-index: 1;
+    bottom: 5%;
+  }
+
+  .addTransactionMobileButton #newTransactionMobile:hover{
+    filter: brightness(1.3);
+  }
+
+  .table-top h2{
+    margin-left: 1rem;
+  }
+
+  .table-container{
+    padding: 0rem;
+    background-color: var(--color-background);
   }
 
 }

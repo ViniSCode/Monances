@@ -53,10 +53,7 @@
       <!-- END OF SIDEBAR -------------------- -->
       <main>
         <div class="topMenu">
-          <div class="menu-mobile">
-            <span class="material-icons" id="mobile-menu" onclick="MobileMenu.open()">menu</span>
-          </div>
-          <h2 id="date-display">November, 8</h2>
+          <h2 id="date-display"></h2>
         </div>
 
         <section id="balance">
@@ -68,6 +65,7 @@
               <img src="assets/incomes.svg" alt="Imagem de entradas" />
             </h3>
             <p id="incomeDisplay">R$ 0,00</p>
+            <p id="dateDisplay"></p>
           </div>
 
           <div class="card">
@@ -92,11 +90,11 @@
 
           <div class="last-transactions">
             <div class="table-top">
-              <h2>Last transactions</h2>
+              <h2>Ultimas Transações</h2>
             
               <button
                 href="#"
-                id=".newTransaction"
+                id="newTransaction"
                 class="button new"
                 onclick="Modal.open()">
                 + New Transaction
@@ -121,17 +119,34 @@
             </div>
           </div>
         </section>
+
+        <div class="addTransactionMobileButton">
+          <button
+            href="#"
+            id="newTransactionMobile"
+            onclick="Modal.open()">
+            <span class="material-icons">add</span>
+          </button>
+        </div>
+
       </main>
 
 
       <div class="right">
-        <div class="theme-toggler">
+
+        <div class="top">
+          <button id="menu-btn">
+            <span class="material-icons" id="mobile-menu" onclick="MobileMenu.open()">menu</span>
+          </button>
+          
+          <div class="theme-toggler">
             <span class="material-icons active" id="toggle-light">light_mode</span>
             <span class="material-icons" id="toggle-dark">dark_mode</span>
+          </div>
         </div>
-  
+
         <div class="analytics">
-          <h3>Balance  Chart</h3>
+          <h3>Gráfico | Balanço</h3>
           <div >
             <canvas id="myChart"></canvas>
           </div>   
