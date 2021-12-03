@@ -1,21 +1,4 @@
-const MobileMenu = {
-  open(){
-    document.querySelector('aside').classList.add('active');
-  },
-  close(){
-    document.querySelector('aside').classList.remove('active')
-  },
-}
-
-const Modal = {
-  open(){
-    document.getElementById('modalOverlay').classList.add('active');
-  },
-  close(){
-    document.getElementById('modalOverlay').classList.remove('active')
-  },
-}
-
+//Local Storage
 const Storage = {
   get(){
     return JSON.parse(localStorage.getItem("dev.finances:transaction")) || [];
@@ -42,7 +25,8 @@ const Transaction = {
   incomes(){
     // total incomes
     let income = 0;
-    Transaction.all.forEach(transaction => {
+
+    Transaction.all.forEach(transaction => { 
       if(transaction.amount > 0){
         income += transaction.amount
       }
@@ -52,6 +36,7 @@ const Transaction = {
   expenses(){
     // total expenses
     let expense = 0;
+    
     Transaction.all.forEach(transaction => {
       if(transaction.amount < 0){
         expense += transaction.amount
@@ -64,62 +49,6 @@ const Transaction = {
     return Transaction.incomes() + Transaction.expenses()
   }
 }
-
-// CALCULATE DATES 
-// SHOW ONLY THIS MONTH'S INCOMES, EXPENSES AND TOTAL 
-let today = new Date();
-let dd = String(today.getDate()).padStart(2, '0');
-let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!;
-let yyyy = today.getFullYear();
-today = dd + '/' + mm + '/' + yyyy;
-//  last month date
-let lastMonthDate;
-
-if(mm ===  '1'){
-  lastMonthDate =  '12';  
-}
-else{
-  lastMonthDate =  Number(mm) - 1;
-}
-
-//Current Month  transactions total
-let currentMonthTransactionsTotal = 0;
-//Last month  transactions total
-let lastMonthTransactionsTotal = 0;
-
-Transaction.all.forEach(transaction =>{
-  if((transaction.date.split("/")[1]) === mm && transaction.date.split("/")[2] === (yyyy).toString()){
-    currentMonthTransactionsTotal += transaction.amount / 100;
-  }
-  if((transaction.date.split("/")[1]) === lastMonthDate.toString() && transaction.date.split("/")[2] === (yyyy).toString()){
-    lastMonthTransactionsTotal += transaction.amount / 100;
-  }
-  //if current month = january ? last month = december
-  if(transaction.date.split("/")[1] === lastMonthDate.toString() && transaction.date.split("/")[2] === (Number(yyyy) - 1).toString()){
-    lastMonthTransactionsTotal += transaction.amount / 100;
-  }
-})
-
-Transaction.all.forEach(transaction => {
-        
-  if((transaction.date.split("/")[1]) === mm && transaction.date.split("/")[2] === (yyyy).toString()){
-    console.log(transaction)
-  }
-})
-
-let myDate;
-myDate = today;
-
-function formatDate(str) {
-  var parts = str.split('/').map(Number);
-  myDate = new Date('20' + parts[2], parts[1] - 1, parts[0]);
-  return myDate.toLocaleString([], {month: 'long'});
-}
-
-dateDisplay = formatDate(myDate.toString()) + ', ' + dd; 
-document.getElementById('date-display').innerHTML = dateDisplay;
-
-
 
 const DOM = {
   transactionsContainer: document.querySelector('#data-table tbody'),
@@ -267,7 +196,7 @@ const Form = {
   }
 }
 
-// ChartJS - doughnut chart
+// ChartJS - doughnut chart - chart config
 var ctx = document.getElementById('myChart');
 var myDonutChart;
 
@@ -386,5 +315,6 @@ const App = {
     App.init()
   }
 }
+
 App.init()
 AddChart.update();

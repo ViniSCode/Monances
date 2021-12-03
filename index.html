@@ -82,6 +82,7 @@
               <img src="assets/total.svg" alt="Imagem de total" />
             </h3>
             <p id="totalDisplay">R$ 0,00</p>
+            <small class="cardDateDisplay">Novembro</small>
           </div>
         </section>
 
@@ -140,8 +141,8 @@
           </button>
           
           <div class="theme-toggler">
-            <span class="material-icons" id="toggle-light">light_mode</span>
-            <span class="material-icons" id="toggle-dark">dark_mode</span>
+            <span class="material-icons active" id="toggle-light" onclick="ThemeToggler.Light()">light_mode</span>
+            <span class="material-icons" id="toggle-dark"  onclick="ThemeToggler.Dark()">dark_mode</span>
           </div>
         </div>
 
@@ -191,16 +192,11 @@
       </div>
     </div>
 
-    <footer>
-      <a href="https://www.github.com/viniscode" target="_blank">Dev - viniscode</a>
-    </footer>
-
-
-
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
 
     <script src="index.js"></script>
     <script src="theme.js"></script>
+    <script src="menuAndModal.js"></script>
   </body>
 </html>
