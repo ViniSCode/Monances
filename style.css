@@ -305,6 +305,7 @@ main .table-container:hover table{
 table thead th{
   text-align: left;
   color: var(--color-dark);
+  padding: 1rem;
 }
 
 table tbody td{
@@ -766,4 +767,23 @@ canvas{
     background-color: var(--color-background);
     margin-bottom: 10rem;
   }
+}
+
+@media (max-width: 542px){
+  main .last-transactions table{
+   padding: 0rem;
+   margin: 0rem;
+   box-shadow: none;
+   background-color: transparent;
+   overflow: scroll;
+
+
+   border-collapse: collapse;
+   width: 100%;
+
+  }
+
+ .remove-transaction {
+  width: 1.5rem;
+ }
 }

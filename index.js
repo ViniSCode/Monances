@@ -318,3 +318,8 @@ const App = {
 
 App.init()
 AddChart.update();
+
+
+
+
+
