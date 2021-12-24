@@ -118,7 +118,7 @@ button#newTransaction:hover{
 /*=================== SIDEBAR ===================*/
 
 aside{
-  height: 100vh;
+  height: 100%;
 }
 
 aside .top{
@@ -150,7 +150,7 @@ aside .sidebar{
   display: flex;
   flex-direction: column;
   
-  height: 86vh;
+  height: 100%;
   
   
   position: relative;
@@ -461,7 +461,7 @@ canvas{
   /*hidden modal*/
   opacity: 0;
   visibility: hidden;
-  z-index: 1;
+  z-index: 100;
 }
 .modal-overlay.active{
   opacity: 1;
@@ -556,6 +556,10 @@ canvas{
   border-radius: .50rem;
   cursor: pointer;
   transition: all .3s ease;
+  width: 47%;
+
+  display: inline-flex;
+  justify-content: center;
 }
 
 
@@ -566,6 +570,10 @@ canvas{
   color: black;
   cursor: pointer;
   transition: all .3s ease;
+  width: 47%;
+
+  display: inline-flex;
+  justify-content: center;
 }
 
 .buttons-income-expense button.income{
@@ -587,6 +595,9 @@ canvas{
 
 .addTransactionMobileButton #newTransactionMobile{
   display: none;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 
@@ -679,7 +690,7 @@ canvas{
   html{
     font-size: 12px;
   }
-
+ 
   .container{
     grid-template-columns: 1fr;
   }
