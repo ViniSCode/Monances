@@ -3,7 +3,6 @@ const Storage = {
   get(){
     return JSON.parse(localStorage.getItem("dev.finances:transaction")) || [];
   },
-
   set(transactions){
     localStorage.setItem("dev.finances:transaction", JSON.stringify(transactions))
   }
@@ -13,15 +12,14 @@ const Transaction = {
   all:Storage.get(),
 
   add(transaction){
+    //add transaction
     Transaction.all.push(transaction)
     App.reload()
   },
-  
   remove(index){
     Transaction.all.reverse().splice(index, 1)
     App.reload()
   },
-
   incomes(){
     // total incomes
     let income = 0;
@@ -45,7 +43,7 @@ const Transaction = {
     return expense
   },
   total(){
-    //total
+    //total incomes + expenses
     return Transaction.incomes() + Transaction.expenses()
   }
 }
@@ -58,6 +56,7 @@ const DOM = {
     tr.innerHTML = DOM.innerHTMLTransaction(transaction, index)
     tr.dataset.index = index
 
+    // adding transaction on html using the "DOM.innerHTMLTransaction" function
     DOM.transactionsContainer.appendChild(tr)
   },
 
@@ -78,7 +77,7 @@ const DOM = {
   },
 
 
-  //show balance cards (incomes, expenses and total)
+  //update balance cards (incomes, expenses and total)
   updateBalance(){
     document
     .getElementById('incomeDisplay')
@@ -95,36 +94,45 @@ const DOM = {
   },
 
   clearTransactions(){
+    //clear transactions before update
     DOM.transactionsContainer.innerHTML = ""
   }
 }
 
 const Utils = {
+  //formatting values from Form
   formatAmount(value){
     value = Number(value) * 100
 
+    //if user add a - (minus sign) instead Select "Income" and "Expense" Buttons
+    if(value < 0){
+      value = -(value);
+    }
+    if(Form.incomeOrExpense === 'income'){
+     value = value;
+    }else{
+      value = -(value);
+    }
+    
     return value;
   },
 
   formatDate(date){
-    const splitedDate = date.split("-")
-    return `${splitedDate[2]}/${splitedDate[1]}/${splitedDate[0]}`
+    //date to user locale date
+    date = date.toLocaleString();
+    date = date.replaceAll("-", "/")
+    return date;
   },
 
   formatCurrency(value){
-    const signal = Number(value) < 0 ? "-" : "";
-
-    //expressão regular /\D/ significa:
-    //ache tudo que não for Número 
-    value = String(value).replace(/\D/g, "")
-
+    //formatting value to user local currency
     value = Number(value) / 100;
     value = value.toLocaleString("pt-BR", {
       style:"currency",
       currency: "BRL"
     })
     
-    return signal + value;
+    return value;
   },
 }
 
@@ -133,7 +141,20 @@ const Form = {
   description: document.querySelector('input#description'),
   amount: document.querySelector('input#amount'),
   date: document.querySelector('input#date'),
+  incomeOrExpense: "",
 
+
+  setIncome(){
+    Form.incomeOrExpense = 'income';
+    document.querySelector('#incomeButton').classList.add('income')
+    document.querySelector('#expenseButton').classList.remove('expense')
+  },
+
+  setExpense(){
+    Form.incomeOrExpense = 'expense';
+    document.querySelector('#expenseButton').classList.add('expense')
+    document.querySelector('#incomeButton').classList.remove('income')
+  },
 
   getValues(){
     //get input (modal) values
@@ -141,15 +162,17 @@ const Form = {
       description: Form.description.value,
       amount: Form.amount.value,
       date: Form.date.value,
+      incomeOrExpense: Form.incomeOrExpense,
     }
   },
 
   validateField(){
-    const {description, amount, date} = Form.getValues()
+    const {description, amount, date, incomeOrExpense} = Form.getValues()
 
     if(description.trim() === "" || 
       amount.trim === "" || 
-      date.trim() === ""){
+      date.trim() === "" ||
+      incomeOrExpense === ""){
         throw new Error("Por favor, preencha todos os campos")
       }
   },

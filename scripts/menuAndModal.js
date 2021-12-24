@@ -12,7 +12,8 @@ const Modal = {
     document.getElementById('modalOverlay').classList.add('active');
   },
   close(){
-    document.getElementById('modalOverlay').classList.remove('active')
+    document.getElementById('modalOverlay').classList.remove('active');
+    Form.clearFields();
   },
 }
 

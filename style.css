@@ -99,7 +99,7 @@ body{
   cursor: pointer;
 }
 
-button{
+button#newTransaction{
   padding: 1rem 4rem;
   border: dashed 2px var(--color-primary);
   border-radius: var(--card-border-radius);
@@ -110,7 +110,7 @@ button{
   transition: all 400ms ease;
 }
 
-button:hover{
+button#newTransaction:hover{
   background-color:  var(--color-primary);
   color: var(--color-white);
 }
@@ -472,7 +472,7 @@ canvas{
   background: var(--color-background);
   padding: 2.4rem;
   width: 90%;
-  max-width: 500px;
+  max-width: 440px;
   border-radius: 2rem;
 }
 
@@ -500,10 +500,14 @@ canvas{
 
 .modal button.save{
   border: none;
-  background-color: var(--color-green);
+  background-color: var(--color-primary);
   color: white;
-  width: 50%;
+  width: 100%;
   transition: all 300ms ease;
+
+  padding: 1rem 4rem;
+  border-radius: .50rem;
+  cursor: pointer
 }
 
 .modal button.save:hover{
@@ -512,10 +516,10 @@ canvas{
 
 .modal a#cancelTransaction{
   padding: 1rem 4rem;
+  border-radius: .50rem;
   width: 45%;
   background-color: var(--color-red);
   color: white;
-  border-radius: var(--card-border-radius);
   text-decoration: none;
   font-weight: bold;
   transition: all 300ms ease;
@@ -534,6 +538,42 @@ canvas{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+
+.buttons-income-expense{
+  margin-top: 2rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.buttons-income-expense #incomeButton{
+  padding: 1rem 4rem;
+  border: 1px solid rgb(207, 207, 207);
+  color: black;
+  border-radius: .50rem;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+
+.buttons-income-expense #expenseButton{
+  padding: 1rem 4rem;
+  border: 1px solid rgb(207, 207, 207);
+  border-radius: .50rem;
+  color: black;
+  cursor: pointer;
+  transition: all .3s ease;
+}
+
+.buttons-income-expense button.income{
+  background: var(--color-green);
+}
+
+.buttons-income-expense button.expense{
+  background: var(--color-red);
 }
 
 .actions{
@@ -765,7 +805,6 @@ canvas{
   .table-container{
     padding: 0rem;
     background-color: var(--color-background);
-    margin-bottom: 10rem;
   }
 }
 
