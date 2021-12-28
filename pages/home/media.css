@@ -1,0 +1,93 @@
+@media(max-width: 1250px){
+  html{
+    font-size: 87%;
+  }
+
+  .header-content img{
+    width: 100%;
+  }
+}
+
+@media (max-width: 1090px){
+  .header-content h1{
+    font-size: 4rem;
+  }
+
+  .header-content p{
+    font-size: 1rem;
+    max-width: 320px;
+  }
+}
+
+@media(max-width: 888px){
+
+  .header-content{
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .header-content h1{
+    font-size: 3.2rem;
+    max-width: 380px;
+  }
+
+  .header-content p{
+    font-size: 1rem;
+    max-width: 320px;
+  }
+
+  .header-content img{
+    margin-top: 2rem;
+  }
+}
+
+@media(max-width:768px){
+  .buttons{
+    display: none;
+  }
+
+  .mobile-menu{
+    display: block;
+  }
+
+  .header-content{
+    flex-direction: column;
+  }
+
+  .header-content h1{
+    max-width: 100%;
+    font-size: 5.1rem;
+  }
+  .header-content p{
+    max-width: 100%;
+    font-size: 1.3rem;
+  }
+}
+
+@media(max-width: 708px){
+  .header-content h1{
+    font-size: 4rem;
+  }
+}
+
+@media(max-width: 577px){
+  .header-content h1{
+    font-size: 3.5rem;
+    line-height: 4.5rem;
+  }
+
+  .header-content p{
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 378px){
+  .header-content h1{
+    font-size: 3.2rem;
+    line-height: 4.2rem;
+  }
+
+  .header-content p{
+    font-size: 1.2rem;
+  }
+}

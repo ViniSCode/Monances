@@ -25,12 +25,6 @@ aside .logo h3{
   font-size: 1.2rem;
   color: var(--color-dark);
 }
-
-aside .logo span{
-  color: var(--color-red);
-  font-size: 1.6rem;
-}
-
 aside .sidebar{
   background-color: var(--color-white);
   display: flex;

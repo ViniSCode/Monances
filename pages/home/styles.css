@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+:root{
+  --primary-color: #7380EC;
+  --btn-radius: 2px;
+  --home-text-color-dark: #2F2E41;
+  --home-text-color-light: #9893A3;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.container{
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.button{
+  padding: 0.80rem 1.5rem;
+  transition: all .3s;
+  cursor: pointer;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+header{
+  padding: 2.5rem;
+}
+
+.logo{
+  display: flex;
+  align-items: center;
+}
+
+.logo img{
+  width: 2.8rem;
+}
+
+.logo p{
+  font-size: 1.3rem;
+  font-weight: bold;
+  color:   var(--home-text-color-dark);
+  margin-left: 1rem;
+}
+
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.buttons > .button.contact{
+  border: 1px solid var(--primary-color); 
+  border-radius: var(--btn-radius);
+  color: var(--primary-color);
+}
+
+.buttons > .button.get-started{
+  border: 1px solid var(--primary-color);
+  background: var(--primary-color);
+  border-radius: var(--btn-radius);
+  color: white;
+  margin-left: 1rem;
+}
+
+.mobile-menu{
+  display: none;
+  margin-top: 5px;
+}
+
+/*============= Header Content ======*/
+.header-content{
+  margin-top: 4rem;
+  padding:0 3.125rem 0 3.125rem;
+
+  display: flex;
+}
+
+.header-content h1{
+  max-width: 470px;
+  width: 100%;
+  color: var(--home-text-color-dark);
+  font-size: 5.1rem;
+  font-weight: bold;
+  font-family: 'Playfair Display', serif;
+
+  line-height: 5.5rem;
+}
+
+.header-content p{
+  margin-top: 1.875rem;
+  max-width: 470px;
+  width: 100%;
+
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.25rem;
+  line-height: 2rem;
+
+  color: var(--home-text-color-light);
+}
+
+.header-content a{
+  display: inline-block;
+  margin-top: 1.875rem;
+
+  border: 2px solid var(--primary-color);
+  background: var(--primary-color);
+  border-radius: var(--btn-radius);
+  color: white;
+}
