@@ -170,7 +170,7 @@ const Form = {
     const {description, amount, date, incomeOrExpense} = Form.getValues()
 
     if(description.trim() === "" || 
-      amount.trim === "" || 
+      amount.trim() === "" || 
       date.trim() === "" ||
       incomeOrExpense === ""){
         throw new Error("Por favor, preencha todos os campos")

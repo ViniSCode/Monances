@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+  --color-primary: #7380EC;
+  --color-theme-toggler: #7380EC;
+  --color-red: #ff7782;
+  --color-green: #28D39A;
+  --color-yellow: #ffbb55;
+  --color-white: #fff;
+  --color-info-dark: #7d8da1;
+  --color-info-light: #dce1eb;
+  --color-dark: #363949;
+  --color-dark-chart: #363949;
+  --color-light: rgba(132,139,200, 0.18);
+  --color-primary-variante: #111e88;
+  --color-dark-variant: #677483;
+  --color-background:   #f6f6f9;
+
+  --card-border-radius: 2rem;
+  --card-padding: 1.8rem;
+  --padding-1: 1.2rem;
+
+  --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+.dark-theme-variables {
+  --color-theme-toggler: #202528;
+  --color-background: #181a1e;
+  --color-white: #202528;
+  --color-dark: #edeffd;
+  --color-dark-chart: #c4c4c4;
+  --color-dark-variant: #a3bdcc;
+  --color-light: rgba(0, 0, 0, 0.4);
+  --box-shadow: 0 2rem 3rem var(--color-light);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 14px;
+}
+
+.container{
+  display: grid;
+  gap: 1.8rem;
+  grid-template-columns: 14rem 69rem 23rem;
+  margin: 0 auto 8rem auto;
+
+  width: 96%;
+}
+
+a, button, input, select, textare, small{
+  font-family: 'Poppins', sans-serif;
+}
+
+small{
+  color: var(--color-info-dark);
+}
+
+body{
+  font-family: 'Poppins', sans-serif;
+  background: var(--color-background);
+}
+
+/*screen reader only*/
+.sr-only{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.close {
+  display: none;
+  color: var(--color-dark);
+  cursor: pointer;
+}
+
+.topMenu{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.menu-mobile span{
+  display: none;
+  color: var(--color-dark);
+}
+
+button#newTransaction{
+  padding: 1rem 4rem;
+  border: dashed 2px var(--color-primary);
+  border-radius: var(--card-border-radius);
+  background-color: transparent;
+  color: var(--color-primary);
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 400ms ease;
+}
+
+button#newTransaction:hover{
+  background-color:  var(--color-primary);
+  color: var(--color-white);
+}
