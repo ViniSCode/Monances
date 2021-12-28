@@ -48,7 +48,7 @@ html{
 .container{
   display: grid;
   gap: 1.8rem;
-  grid-template-columns: 14rem auto 23rem;
+  grid-template-columns: 14rem 69rem 23rem;
   margin: 0 auto 8rem auto;
 
   width: 96%;
