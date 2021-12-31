@@ -17,12 +17,31 @@
       </div>
 
       <div class="buttons">
-        <a href="https://github.com/viniscode" target="_blank" class="button contact">Contact</a>
+        <a href="#contact" class="button contact">Contact</a>
         <a href="../../index.html" class="button get-started">Get Started</a>
       </div>
 
       <div class="mobile-menu">
-        <img src="./menu.svg" alt="Abrir Menu">
+        <div class="open-close">
+          <img src="./menu.svg" alt="Abrir"  class="open" onclick="Menu.open()">
+          <img src="./close.svg" alt="fechar" class="close" onclick="Menu.close()">
+
+          <div class="logo-menu">
+            <img src="./logo.svg" alt="">
+            <p>Monances</p>
+          </div>
+        </div>
+        <div class="menu">
+          <div class="menu-open">
+            <div class="menu-items">
+              <ul>
+               <li><a href="./index.html" onclick="Menu.close()">Home</a></li>
+               <li><a href="#contact" onclick="Menu.close()">Contact</a></li>
+               <li><a href="../../index.html" onclick="Menu.close()">Get Started</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </nav>
 
@@ -39,5 +58,58 @@
       </div>
     </div>
   </header>
+
+  <main>
+    <section class="app-preview container">
+      <div class="app-preview-left">
+        <img src="./laptop_preview.svg" alt="App image">
+      </div>
+
+      <div class="app-preview-right">
+        <h2 class="section-title">
+          Spend smarter
+          and save more
+        </h2>
+        <p class="section-paragraph">Say goodbye to spreadsheets with customizable budgets. Easily add and update your Incomes and expenses.</p>
+        <div class="get-started-line">
+          <a href="../../index.html" class="get-started">Get Started</a>
+          <div class="green-line"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="track-your-spending container">
+      <div class="track-your-spending-left">
+        <h2 class="section-title">
+          Track your spending
+        </h2>
+        <p class="section-paragraph">Reach your goals with custom budgets, monitoring your incomes and expenses everyday, All for free.</p>
+        <div class="get-started-line">
+          <a href="../../index.html" class="get-started">Get Started</a>
+          <div class="green-line"></div>
+        </div>
+      </div>
+
+      <div class="track-your-spending-right">
+        <img src="./idea.svg" alt="image">
+      </div>
+    </section>
+
+    <section id="contact" class="get-in-touch  container">
+      <div class="get-in-touch-content">
+        <div class="get-in-touch-left">
+          <h2 class="section-title">Get in touch with me.</h2>
+        </div>
+        <div class="get-in-touch-right">
+          <a href="/" class="button get-started">Contact</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+
+  </footer>
+  <script src="menu.js"></script>
 </body>
 </html>
