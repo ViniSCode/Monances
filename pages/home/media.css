@@ -6,6 +6,14 @@
   .header-content img{
     width: 100%;
   }
+
+  section.app-preview img{
+    width: 100%;
+  }
+
+  section.track-your-spending img{
+    width: 100%;
+  }
 }
 
 @media (max-width: 1090px){
@@ -14,10 +22,25 @@
   }
 
   .header-content p{
-    font-size: 1rem;
+    font-size: 1.1rem;
     max-width: 320px;
   }
+
+  .get-in-touch-content{
+    width: 78%;
+  }
 }
+@media (max-width: 965px) {
+  h2.section-title{
+    font-size: 3.2rem;
+    /* max-width: 413px; */
+  }
+  p.section-paragraph{
+      font-size: 1.1rem;
+    /* max-width: 413px; */
+  }
+}
+
 
 @media(max-width: 888px){
 
@@ -39,9 +62,29 @@
   .header-content img{
     margin-top: 2rem;
   }
+
+  .get-in-touch-content{
+    width: 90%;
+  }
+}
+
+@media(max-width: 836px){
+  h2.section-title{
+    font-size: 2.9rem;
+  }
+  p.section-paragraph{
+      font-size: 1rem;
+  }
+
+  .get-in-touch-content h2.section-title{
+    max-width: 300px;
+  }
 }
 
 @media(max-width:768px){
+
+  /*  header-content */
+
   .buttons{
     display: none;
   }
@@ -62,11 +105,67 @@
     max-width: 100%;
     font-size: 1.3rem;
   }
+
+  /*  section.app-preview */
+
+  section.app-preview{
+    flex-direction: column;
+    align-items: baseline;
+  }
+
+  .app-preview-left{
+    margin-top: 2rem;
+    margin-right: 0;
+    order: 1;
+  }
+
+  h2.section-title{
+    font-size: 3.40rem;
+    max-width: 100%;
+  }
+  p.section-paragraph{
+      font-size: 1.25rem;
+      max-width: 100%;
+  }
+
+  /*  section.track-your-spending*/
+  
+  section.track-your-spending{
+    flex-direction: column;
+    margin-top: 4rem;
+  }
+
+  section.track-your-spending img{
+    margin-top: 4rem;
+  }
+
+  .get-in-touch-content{
+    width: 100%;
+  }
+
+  .get-in-touch-content{
+    padding: 6rem;
+  }
+
+  section.get-in-touch a.get-started{
+    padding: 1.3rem 4rem;
+  }
 }
 
 @media(max-width: 708px){
   .header-content h1{
     font-size: 4rem;
+  }
+}
+
+@media(max-width: 679px){
+  .get-in-touch-content{
+    flex-direction: column;
+  }
+
+  .get-in-touch-content h2.section-title{
+    max-width: 100%;
+    margin-bottom: 4rem;
   }
 }
 

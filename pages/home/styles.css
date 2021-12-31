@@ -11,6 +11,15 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
+  text-decoration: none;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+li{
+  list-style-type: none;
 }
 
 .container{
@@ -20,11 +29,15 @@
 
 .button{
   padding: 0.80rem 1.5rem;
-  transition: all .3s;
+  transition: all .4s;
   cursor: pointer;
   text-decoration: none;
   color: black;
   font-weight: bold;
+}
+
+.button:hover{
+  filter: brightness(1.3);
 }
 
 header{
@@ -51,6 +64,7 @@ nav{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 3px;
 }
 
 
@@ -114,4 +128,227 @@ nav{
   background: var(--primary-color);
   border-radius: var(--btn-radius);
   color: white;
+}
+
+
+/*============= Section app-preview ======*/
+section.app-preview{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 10rem;
+  padding: 0 3.125rem 0 3.125rem;
+}
+
+.app-preview-left{
+  margin-right: 4rem;
+}
+
+
+h2.section-title{
+  font-size: 3.75rem;
+  font-family: 'Playfair Display', serif;
+  max-width: 413px;
+}
+
+
+p.section-paragraph{
+  margin-top: 1.875rem;
+  max-width: 450px;
+  width: 100%;
+
+  font-family: 'Open Sans', sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.25rem;
+  line-height: 2rem;
+
+  color: var(--home-text-color-light);
+}
+
+.get-started-line{
+  position: relative;
+}
+
+.get-started-line a.get-started{
+  display: inline-block;
+  margin-top: 1.875rem;
+
+  color:   var(--home-text-color-dark);
+  font-weight: 600;
+  font-size: 1.125rem;
+  position: relative;
+  z-index: 1;
+}
+
+.get-started-line .green-line{
+  position: absolute;
+  width: 100px;
+  left: 0;
+  top: 4px;
+  bottom: 0%;
+  z-index: 0;
+  border-bottom: 10px solid rgba(65, 241, 182, 0.5);
+}
+
+/*============= Section Track your spending ======*/
+.track-your-spending{
+  margin-top: 10rem;
+  padding: 0 3.125rem 0 3.125rem;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.track-your-spending-left{
+  margin-right: 4rem;
+}
+
+.track-your-spending-left h2{
+  margin-top: 4rem;
+}
+
+.track-your-spending-right img{
+  width: 600px;
+}
+
+
+/*============= Mobile Menu ======*/
+.menu{
+  display: none;
+}
+
+.open-close{
+  display: flex;
+  align-items: center;
+}
+
+.mobile-menu .close{
+  display: none;
+}
+
+.mobile-menu.active{
+  width: 100%;
+  height: 100%;
+
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  background: rgb(255, 255, 255);
+  z-index: 10;
+}
+
+.mobile-menu .open{
+  display: inline-block;
+  cursor: pointer;
+}
+
+.mobile-menu.active .close{
+  display: inline-block;
+  cursor: pointer;
+}
+
+.mobile-menu.active .open{
+  display: none;
+}
+
+.mobile-menu.active .open-close{
+  justify-content: flex-end;
+  padding-top: 2.6rem;
+  padding-right: 2.3rem;
+}
+
+.mobile-menu.active .menu{
+  display: block;
+}
+
+.menu-items{
+  margin-top: 4rem;
+}
+
+.menu-items ul a{
+  display: inline-block;
+}
+
+.menu-items ul{
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+}
+
+
+.menu-items ul a{
+  margin-bottom: 4rem;
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  font-weight: bold;
+
+  transition: filter .2s ease;
+}
+
+.menu-items ul a:hover{
+  filter: brightness(1.3);
+}
+
+
+.mobile-menu div.logo-menu{
+  display: none;
+}
+
+.mobile-menu.active .logo-menu{
+  display: flex;
+  align-items: center;
+
+  position: absolute;
+  left: 2.5rem;
+}
+
+.mobile-menu .logo-menu p{
+  font-size: 1.375rem;
+
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--home-text-color-dark);
+  margin-left: 1rem;
+}
+
+.mobile-menu .logo-menu img{
+  width: 2.8rem;
+}
+
+/*============= Section Get in touch with me ======*/
+
+.get-in-touch-content{
+  background:   var(--home-text-color-dark);
+  padding: 5.25rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 70%;
+  margin: 10rem auto;
+}
+
+.get-in-touch-content h2.section-title{
+  color: white;
+  max-width: 337px;
+}
+
+
+section.get-in-touch a.get-started{
+  display: inline-block;
+
+  border: 1px solid var(--primary-color);
+  background: var(--primary-color);
+  border-radius: var(--btn-radius);
+  color: white;
+  margin-left: 1rem;
+  padding: 1.5rem 5rem;
 }
