@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./styles.css">
-  <link rel="stylesheet" href="./media.css">
+  <link rel="stylesheet" href="./styles/styles.css">
+  <link rel="stylesheet" href="./styles/media.css">
   <title>Monances App</title>
 </head>
 <body>
   <header class="container">
     <nav>
       <div class="logo">
-        <img src="./logo.svg" alt="Logo Monances">
+        <img src="./images/logo.svg" alt="Logo Monances">
         <p>Monances</p>
       </div>
 
@@ -23,11 +23,11 @@
 
       <div class="mobile-menu">
         <div class="open-close">
-          <img src="./menu.svg" alt="Abrir"  class="open" onclick="Menu.open()">
-          <img src="./close.svg" alt="fechar" class="close" onclick="Menu.close()">
+          <img src="./images/menu.svg" alt="Abrir"  class="open" onclick="Menu.open()">
+          <img src="./images/close.svg" alt="fechar" class="close" onclick="Menu.close()">
 
           <div class="logo-menu">
-            <img src="./logo.svg" alt="">
+            <img src="./images/logo.svg" alt="">
             <p>Monances</p>
           </div>
         </div>
@@ -35,7 +35,7 @@
           <div class="menu-open">
             <div class="menu-items">
               <ul>
-               <li><a href="./index.html" onclick="Menu.close()">Home</a></li>
+               <li><a href="./home.html" onclick="Menu.close()">Home</a></li>
                <li><a href="#contact" onclick="Menu.close()">Contact</a></li>
                <li><a href="../../index.html" onclick="Menu.close()">Get Started</a></li>
               </ul>
@@ -50,11 +50,11 @@
       <div class="header-content-left">
         <h1>Your best financial life starts here.</h1>
         <p>A smart, easy-to-use app that allows you to track your in-and-out money.</p>
-        <a href="../../index.html" class="button get-started">Get started</a>
+        <a href="../../index.html" class="button get-started">Go to Dashboard</a>
       </div>
 
       <div class="header-content-right">
-        <img src="./team.svg" alt="Team image">
+        <img src="./images/team.svg" alt="Team image">
       </div>
     </div>
   </header>
@@ -62,7 +62,7 @@
   <main>
     <section class="app-preview container">
       <div class="app-preview-left">
-        <img src="./laptop_preview.svg" alt="App image">
+        <img src="./images/laptop_preview.svg" alt="App image">
       </div>
 
       <div class="app-preview-right">
@@ -91,7 +91,7 @@
       </div>
 
       <div class="track-your-spending-right">
-        <img src="./idea.svg" alt="image">
+        <img src="./images/idea.svg" alt="image">
       </div>
     </section>
 
@@ -110,6 +110,8 @@
   <footer>
 
   </footer>
-  <script src="menu.js"></script>
+  <script src="home.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="scrollReveal.js"></script>
 </body>
 </html>
