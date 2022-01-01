@@ -171,6 +171,14 @@
     max-width: 100%;
     margin-bottom: 4rem;
   }
+
+  section.get-in-touch h2{
+    text-align: center;
+  }
+
+  section.get-in-touch a.get-started{
+    margin: 0;
+  }
 }
 
 @media(max-width: 577px){
@@ -181,6 +189,41 @@
 
   .header-content p{
     font-size: 1.3rem;
+  }
+}
+
+@media(max-width: 440px){
+  section.app-preview{
+    margin-top: 2rem;
+  }
+  
+  section.track-your-spending{
+    margin-top: 2rem;
+  }
+
+  section.get-in-touch .get-in-touch-content{
+    margin-top: 4rem;
+  }
+
+  section .get-in-touch-content{
+    padding: 0;
+  }
+
+  section .get-in-touch-left{
+    padding: 4rem 2rem 0rem 2rem;
+  }
+
+  section .get-in-touch-right{
+    padding-bottom: 4rem;
+  }
+
+  section .get-in-touch-content h2{
+    font-size: 2.6rem;
+    margin-bottom: 1rem;
+  }
+
+  section.get-in-touch a.get-started{
+    padding: 1rem 4rem;
   }
 }
 
