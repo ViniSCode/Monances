@@ -14,12 +14,12 @@
   text-decoration: none;
 }
 
-html{
-  scroll-behavior: smooth;
+body{
+  overflow-x: hidden
 }
 
-body{
-  overflow-x: hidden;
+html{
+  scroll-behavior: smooth;
 }
 
 li{
@@ -97,6 +97,8 @@ nav{
   padding:0 3.125rem 0 3.125rem;
 
   display: flex;
+
+
 }
 
 .header-content h1{
@@ -143,6 +145,9 @@ section.app-preview{
 
   margin-top: 10rem;
   padding: 0 3.125rem 0 3.125rem;
+
+
+
 }
 
 .app-preview-left{
@@ -204,6 +209,8 @@ p.section-paragraph{
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+
+
 }
 
 .track-your-spending-left{
@@ -330,7 +337,6 @@ p.section-paragraph{
 }
 
 /*============= Section Get in touch with me ======*/
-
 .get-in-touch-content{
   background:   var(--home-text-color-dark);
   padding: 5.25rem;

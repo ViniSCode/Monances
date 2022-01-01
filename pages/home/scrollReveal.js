@@ -1,15 +1,15 @@
 
 const slideLeft = {
-  distance: '150%',
+  distance: '150px',
   origin: 'left',
-  opacity: null,
+  opacity: 0,
   delay: 400,
   reset: true,
   duration: 700
 };
 
 const slideRight = {
-  distance: '150%',
+  distance: '150px',
   origin: 'right',
   opacity: null,
   opacity: 0,

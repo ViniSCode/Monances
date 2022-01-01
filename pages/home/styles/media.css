@@ -83,6 +83,10 @@
 
 @media(max-width:768px){
 
+  .container{
+    overflow-x: hidden;
+  }
+
   /*  header-content */
 
   .buttons{
