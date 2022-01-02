@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="./styles/styles.css">
   <link rel="stylesheet" href="./styles/media.css">
   <link rel="shortcut icon" href="../../assets/favicon.svg" type="image/x-icon">
+  <script src="https://unpkg.com/feather-icons"></script>
   <title>Monances App</title>
 </head>
 <body>
@@ -60,7 +61,7 @@
     </div>
   </header>
 
-  <main>
+  <main  id="preview">
     <section class="app-preview container">
       <div class="app-preview-left">
         <img src="./images/laptop_preview.svg" alt="App image">
@@ -79,7 +80,7 @@
       </div>
     </section>
 
-    <section class="track-your-spending container">
+    <section class="track-your-spending container" id="track">
       <div class="track-your-spending-left">
         <h2 class="section-title">
           Track your spending
@@ -109,10 +110,43 @@
   </main>
 
   <footer>
-
+    <div class="footer-container">
+      <div class="footer-card">
+        <h3>Sections</h3>
+        <a href="./home.html">Home</a>
+        <a href="#preview">Preview</a>
+        <a href="#track">Track your spending</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-card">
+        <h3>About</h3>
+        <a href="https://github.com/viniscode" target="_blank">viniscode</a>
+        <a href="https://github.com/viniscode/Monances" target="_blank">Source code</a>
+      </div>
+      <div class="footer-card">
+        <h3>Support</h3>
+        <a href="./home.html">Home</a>
+        <a href="#preview">Preview</a>
+        <a href="#track">Track your spending</a>
+        <a href="#contact">Contact</a>
+      </div>
+      
+      <div class="footer-card">
+        <h3>Get in touch</h3>
+        <div class="social">
+          <a href="https://www.linkedin.com/in/vinicius-rodrigues-5897831b8/" target="_blank" id="linkedin"><i data-feather="linkedin"></i></a>
+          <a href="https://github.com/viniscode" target="_blank"><i data-feather="github" id="git"></i></a>
+          <a href="https://instagram.com/rodriguesvini.dev" target="_blank" id="insta"><i data-feather="instagram"></i></a>
+        </div>
+      </div>
+      
+    </div>
   </footer>
   <script src="home.js"></script>
   <script src="https://unpkg.com/scrollreveal"></script>
   <script src="scrollReveal.js"></script>
+  <script>
+    feather.replace()
+  </script>
 </body>
 </html>

@@ -50,3 +50,6 @@ ScrollReveal().reveal('.track-your-spending-right', slideRight);
 
 // Get in touch Section
 ScrollReveal().reveal('.get-in-touch', slideUp);
+
+// Footer
+ScrollReveal().reveal('.footer-container', slideLeft);
