@@ -16,7 +16,7 @@
 }
 
 body{
-  overflow-x: hidden
+  overflow-x: hidden;
 }
 
 html{
@@ -30,6 +30,7 @@ li{
 .container{
   max-width: 1280px;
   margin: 0 auto;
+  overflow-x: hidden;
 }
 
 .button{
@@ -383,6 +384,7 @@ footer{
 
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   flex-wrap: wrap;
 }
 

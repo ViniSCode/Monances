@@ -29,6 +29,14 @@
   .get-in-touch-content{
     width: 78%;
   }
+
+  .footer-container{
+    justify-content: flex-start;
+  }
+
+  .footer-card{
+    padding: 2rem 2rem;
+  }
 }
 @media (max-width: 965px) {
   h2.section-title{
@@ -43,6 +51,10 @@
 
 
 @media(max-width: 888px){
+
+  .footer-card{
+    padding: 2rem 2rem;
+  }
 
   .header-content{
     padding-left: 1rem;
@@ -179,6 +191,8 @@
   section.get-in-touch a.get-started{
     margin: 0;
   }
+
+
 }
 
 @media(max-width: 577px){
@@ -189,6 +203,11 @@
 
   .header-content p{
     font-size: 1.3rem;
+  }
+
+  
+  footer {
+    padding: 15rem 2rem 6rem 2rem;
   }
 }
 
@@ -236,4 +255,6 @@
   .header-content p{
     font-size: 1.2rem;
   }
+
+  
 }
