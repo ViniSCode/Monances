@@ -8,7 +8,7 @@
 - Track your incomes, expenses and check your Total
 - Check the Balance Chart
 - Dark Mode
-## Tecnologias  🚀
+## Technologies
 -  Html
 - Css
 - Javascript
