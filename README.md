@@ -15,9 +15,7 @@
 - ChartJS
 ## Monances Layout
 - Home Page - Desktop
-<img width="200px">
 ![enter image description here](https://github.com/ViniSCode/Monances/blob/main/images/Monances_home_page.png?raw=true)
-</img>
 - Home Page - Mobile![enter image description here](https://github.com/ViniSCode/Monances/blob/main/images/Monances_home_page_mobile.png?raw=true)
 - Dashboard - Desktop 
 ![enter image description here](https://github.com/ViniSCode/Monances/blob/main/images/Monances_Dashboard.png?raw=true)
