@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/global.css">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/modal.css">
+    <link rel="stylesheet" href="./styles/media.css">
+
+    <link rel="shortcut icon" href="assets/favicon.svg" type="image/x-icon" />
+
+    <!-- Material icons  -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <title>Monances</title>
+  </head>
+  <body>
+    <div class="container">
+      <aside>
+        <div class="top">
+          <div class="logo">
+            <a href="../../index.html">
+              <img src="assets/monances.svg" alt="Logo Monances" />
+            </a>
+          <a href="../../index.html"><h3>Monances</h3></a>  
+          </div>
+          <div class="close" id="close-btn">
+            <span class="material-icons" onclick="MobileMenu.close()" >close</span>
+          </div>
+        </div>
+        <div class="sidebar">
+          <a href="./dashboard.html" class="active">
+            <span class="material-icons">grid_view</span>
+            <p>Dashboard</p>
+          </a>
+          <a href="#">
+            <span class="material-icons">contact_page</span>
+            <p>Contact</p>
+          </a>
+          <a href="../../index.html">
+            <span class="material-icons">logout</span>
+            <p>Exit</p>
+          </a>
+        </div>
+      </aside>
+      <!-- END OF SIDEBAR -------------------- -->
+      <main>
+        <div class="topMenu">
+          <h2 id="date-display"></h2>
+        </div>
+
+        <section id="balance">
+          <h2 class="sr-only">Balance</h2>
+
+          <div class="card">
+            <h3>
+              <span>Incomes</span>
+              <img src="assets/incomes.svg" alt="Imagem de entradas" />
+            </h3>
+            <p id="incomeDisplay">R$ 0,00</p>
+            <p id="dateDisplay"></p>
+          </div>
+
+          <div class="card">
+            <h3>
+              <span>Expenses</span>
+              <img src="assets/expenses.svg" alt="Imagem de saídas" />
+            </h3>
+            <p id="expenseDisplay">R$ 0,00</p>
+          </div>
+
+          <div class="card total">
+            <h3>
+              <span>Total</span>
+              <img class="total" src="assets/total.svg" alt="Imagem de total" />
+            </h3>
+            <p id="totalDisplay">R$ 0,00</p>
+          </div>
+        </section>
+
+        <section id="transaction">
+          <h2 class="sr-only">Transactions</h2>
+
+          <div class="last-transactions">
+            <div class="table-top">
+              <h2>Last Transactions</h2>
+            
+              <button
+                href="#"
+                id="newTransaction"
+                class="button new"
+                onclick="Modal.open()">
+                + New Transaction
+              </button>
+            </div>
+            
+
+            <div class="table-container">
+              <table id="data-table">
+                <thead>
+                  <tr>
+                    <th>Description</th>
+                    <th>Amount</th>
+                    <th>Date</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+                </tbody>
+              </table>         
+            </div>
+          </div>
+        </section>
+
+        <div class="addTransactionMobileButton">
+          <button
+            href="#"
+            id="newTransactionMobile"
+            onclick="Modal.open()">
+            <span class="material-icons">add</span>
+          </button>
+        </div>
+
+      </main>
+
+
+      <div class="right">
+
+        <div class="top">
+          <button id="menu-btn">
+            <span class="material-icons" id="mobile-menu" onclick="MobileMenu.open()">menu</span>
+          </button>
+          
+          <div class="theme-toggler">
+            <span class="material-icons active" id="toggle-light" onclick="ThemeToggler.Light()">light_mode</span>
+            <span class="material-icons" id="toggle-dark"  onclick="ThemeToggler.Dark()">dark_mode</span>
+          </div>
+        </div>
+
+        <div class="analytics">
+          <h3>Chart | Balance</h3>
+          <div >
+            <canvas id="myChart"></canvas>
+          </div>   
+
+           
+        </div>
+      </div>
+    </div>
+
+
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal">
+        <div id="form">
+          <div class="modalTop">
+            <h2>New Transaction</h2>
+            <span class="material-icons" id="close-modal-btn" onclick="Modal.close()">close</span>
+          </div>
+          <form action="" onsubmit="Form.submit(event)">
+            <div class="input-group">
+              <label class="sr-only" for="description">Description</label>
+              <input type="text" id="description" name="description" placeholder="Description">
+            </div>
+
+            <div class="input-group">
+              <label class="sr-only" for="amount">Amount</label>
+              <input type="number" id="amount" name="amount" placeholder="0,00">
+              <small class="help">Select "Income" to incomes and "Expense" to expenses</small>
+            </div>
+
+            <div class="buttons-income-expense">
+              <button id="incomeButton" onclick="Form.setIncome();  return false;" class="income">Income</button>
+              <button id="expenseButton" onclick="Form.setExpense(); return false;">Expense</button>
+            </div>
+
+            <div class="input-group">
+              <label class="sr-only" for="date">Date</label>
+              <input type="date" id="date" name="date">
+            </div>
+
+            <div class="actions">
+              <!-- <a href="#" id="cancelTransaction" class="button cancel" onclick="Modal.close()">Cancelar</a> -->
+              <button class="save">Confirm</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+
+    <script src="index.js"></script>
+    <script src="./scripts/theme.js"></script>
+    <script src="./scripts/menuAndModal.js"></script>
+  </body>
+</html>
