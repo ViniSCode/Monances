@@ -16,7 +16,7 @@
 ## Monances Layout
 - Home Page - Desktop
 ![enter image description here](https://github.com/ViniSCode/Monances/blob/main/images/Monances_home_page.png?raw=true)
-- Home Page - Mobile![enter image description here](https://github.com/ViniSCode/Monances/blob/main/images/Monances_home_page_mobile.png?raw=true=250x)
+- Home Page - Mobile![enter image description here](https://github.com/ViniSCode/Monances/blob/main/images/Monances_home_page_mobile.png?raw=true=5x)
 - Dashboard - Desktop 
 ![enter image description here](https://github.com/ViniSCode/Monances/blob/main/images/Monances_Dashboard.png?raw=true)
 - Dashboard - Mobile
