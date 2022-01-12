@@ -4,11 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/global.css">
-    <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="./styles/modal.css">
-    <link rel="stylesheet" href="./styles/media.css">
-
+    <link rel="stylesheet" href="./styles/global.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/modal.css" />
+    <link rel="stylesheet" href="./styles/media.css" />
     <link rel="shortcut icon" href="assets/favicon.svg" type="image/x-icon" />
 
     <!-- Material icons  -->
@@ -27,10 +26,12 @@
             <a href="../../index.html">
               <img src="assets/monances.svg" alt="Logo Monances" />
             </a>
-          <a href="../../index.html"><h3>Monances</h3></a>  
+            <a href="../../index.html"><h3>Monances</h3></a>
           </div>
           <div class="close" id="close-btn">
-            <span class="material-icons" onclick="MobileMenu.close()" >close</span>
+            <span class="material-icons" onclick="MobileMenu.close()"
+              >close</span
+            >
           </div>
         </div>
         <div class="sidebar">
@@ -82,6 +83,7 @@
             <p id="totalDisplay">R$ 0,00</p>
           </div>
         </section>
+        <!--END OF BALANCED SECTION-------------------- -->
 
         <section id="transaction">
           <h2 class="sr-only">Transactions</h2>
@@ -89,16 +91,16 @@
           <div class="last-transactions">
             <div class="table-top">
               <h2>Last Transactions</h2>
-            
+
               <button
                 href="#"
                 id="newTransaction"
                 class="button new"
-                onclick="Modal.open()">
+                onclick="Modal.open()"
+              >
                 + New Transaction
               </button>
             </div>
-            
 
             <div class="table-container">
               <table id="data-table">
@@ -110,78 +112,112 @@
                     <th></th>
                   </tr>
                 </thead>
-                <tbody>
-                  
-                </tbody>
-              </table>         
+                <tbody></tbody>
+              </table>
             </div>
           </div>
         </section>
+        <!--END OF TRANSACTION SECTION-------------------- -->
 
         <div class="addTransactionMobileButton">
-          <button
-            href="#"
-            id="newTransactionMobile"
-            onclick="Modal.open()">
+          <button href="#" id="newTransactionMobile" onclick="Modal.open()">
             <span class="material-icons">add</span>
           </button>
         </div>
-
       </main>
 
-
       <div class="right">
-
         <div class="top">
           <button id="menu-btn">
-            <span class="material-icons" id="mobile-menu" onclick="MobileMenu.open()">menu</span>
+            <span
+              class="material-icons"
+              id="mobile-menu"
+              onclick="MobileMenu.open()"
+              >menu</span
+            >
           </button>
-          
+
           <div class="theme-toggler">
-            <span class="material-icons active" id="toggle-light" onclick="ThemeToggler.Light()">light_mode</span>
-            <span class="material-icons" id="toggle-dark"  onclick="ThemeToggler.Dark()">dark_mode</span>
+            <span
+              class="material-icons active"
+              id="toggle-light"
+              onclick="ThemeToggler.Light()"
+              >light_mode</span
+            >
+            <span
+              class="material-icons"
+              id="toggle-dark"
+              onclick="ThemeToggler.Dark()"
+              >dark_mode</span
+            >
           </div>
         </div>
 
         <div class="analytics">
           <h3>Chart | Balance</h3>
-          <div >
+          <div>
             <canvas id="myChart"></canvas>
-          </div>   
-
-           
+          </div>
         </div>
       </div>
+      <!--END OF RIGHT - theme-toggler - menu-btn - balance chart -------------------- -->
     </div>
-
 
     <div class="modal-overlay" id="modalOverlay">
       <div class="modal">
         <div id="form">
           <div class="modalTop">
             <h2>New Transaction</h2>
-            <span class="material-icons" id="close-modal-btn" onclick="Modal.close()">close</span>
+            <span
+              class="material-icons"
+              id="close-modal-btn"
+              onclick="Modal.close()"
+              >close</span
+            >
           </div>
           <form action="" onsubmit="Form.submit(event)">
             <div class="input-group">
               <label class="sr-only" for="description">Description</label>
-              <input type="text" id="description" name="description" placeholder="Description">
+              <input
+                type="text"
+                id="description"
+                name="description"
+                placeholder="Description"
+              />
             </div>
 
             <div class="input-group">
               <label class="sr-only" for="amount">Amount</label>
-              <input type="number" id="amount" name="amount" placeholder="0,00">
-              <small class="help">Select "Income" to incomes and "Expense" to expenses</small>
+              <input
+                type="number"
+                id="amount"
+                name="amount"
+                placeholder="0,00"
+              />
+              <small class="help"
+                >Select "Income" to incomes and "Expense" to expenses</small
+              >
             </div>
 
             <div class="buttons-income-expense">
-              <button id="incomeButton" onclick="Form.setIncome();  return false;" class="income">Income</button>
-              <button id="expenseButton" onclick="Form.setExpense(); return false;">Expense</button>
+              <button
+                id="incomeButton"
+                onclick="Form.setIncome();  return false;"
+                class="income"
+              >
+                Income
+              </button>
+              <button
+                id="expenseButton"
+                onclick="Form.setExpense(); return false;"
+              >
+                Expense
+              </button>
             </div>
 
             <div class="input-group">
               <label class="sr-only" for="date">Date</label>
-              <input type="date" id="date" name="date">
+              <input type="date" id="date" name="date" />
             </div>
 
             <div class="actions">
@@ -192,10 +228,10 @@
         </div>
       </div>
     </div>
+    <!--END OF MODAL-------------------- -->
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
-
     <script src="index.js"></script>
     <script src="./scripts/theme.js"></script>
     <script src="./scripts/menuAndModal.js"></script>
