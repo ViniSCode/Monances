@@ -174,6 +174,11 @@ const Form = {
       date.trim() === "" ||
       incomeOrExpense === ""
     ) {
+      Swal.fire({
+        icon: "warning",
+        title: "Oops...",
+        text: "Por favor, preencha todos os campos!",
+      });
       throw new Error("Por favor, preencha todos os campos");
     }
   },
@@ -212,7 +217,7 @@ const Form = {
       //close modal
       Modal.close();
     } catch (error) {
-      alert(error.message);
+      console.log(error.message);
     }
   },
 };
