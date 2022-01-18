@@ -5,7 +5,7 @@
 - All for free
 ## Funcionalidades
 - Add and remove your custom budgets
-- Track your incomes, expenses and check your Total
+- Track your incomes, expenses and check your total amount
 - Check the Balance Chart
 - Dark Mode
 ## Technologies
