@@ -14,6 +14,7 @@
 - Javascript
 - ChartJS
 - sweetalert2
+- scrollrevealjs
 
 ## See the app running [Here](https://monances.vercel.app/)
 ## Monances Layout
