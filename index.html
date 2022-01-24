@@ -195,11 +195,27 @@
       </div>
     </footer>
     <!--END OF FOOTER-------------------- -->
+
+    <!--LOADING SCREEN-->
+    <div class="loader-overlay">
+      <div class="loader"></div>  
+    </div>
+    
+
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="scrollReveal.js"></script>
     <script src="home.js"></script>
     <script>
       feather.replace();
     </script>
+
+  <script>
+    // ==== LOADING SCREEN
+    let spinner = document.querySelector('.loader-overlay');
+
+    window.addEventListener('load', () => {
+      spinner.parentElement.removeChild(spinner);
+    })
+  </script>
   </body>
 </html>
