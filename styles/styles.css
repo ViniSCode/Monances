@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap");
 :root {
   --primary-color: #7380ec;
@@ -54,15 +55,14 @@ header {
   align-items: center;
 }
 
-.logo img {
-  width: 2.8rem;
-}
-
 .logo p {
-  font-size: 1.3rem;
-  font-weight: bold;
   color: var(--home-text-color-dark);
-  margin-left: 1rem;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 37px;
+  line-height: 53px;
+  text-align: center;
+  font-family: 'Satisfy', cursive;
 }
 
 nav {
@@ -106,7 +106,6 @@ nav {
   font-size: 5.1rem;
   font-weight: bold;
   font-family: "Playfair Display", serif;
-
   line-height: 5.5rem;
 }
 

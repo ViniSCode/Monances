@@ -20,11 +20,17 @@ aside .logo{
   gap: 0.8rem;
 }
 
+aside .logo > a > img{
+  width: 33px;
+}
+
 aside .logo h3{
-  font-weight: 600;
-  font-size: 1.2rem;
+  font-family: 'Satisfy', cursive;
+  font-weight: 500;
+  font-size: 1.5rem;
   color: var(--color-dark);
 }
+
 aside .sidebar{
   background-color: var(--color-white);
   display: flex;
