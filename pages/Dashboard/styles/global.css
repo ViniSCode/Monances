@@ -50,11 +50,11 @@ html{
   gap: 1.8rem;
   grid-template-columns: 14rem 69rem 23rem;
   margin: 0 auto 8rem auto;
-
+  background: var(--white);
   width: 96%;
 }
 
-a, button, input, select, textare, small{
+a, button, input, select, textarea, small{
   font-family: 'Poppins', sans-serif;
 }
 
